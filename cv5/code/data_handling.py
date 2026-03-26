@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
 from sklearn.datasets import load_breast_cancer
-from sklearn.preprocessing import StandardScaler, MinMaxScaler
+from sklearn.preprocessing import StandardScaler, MinMaxScaler, RobustScaler
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from typing import Tuple, List, Optional, Callable
@@ -69,12 +69,50 @@ class Dataset:
         """
         scalers = {
             'standard': StandardScaler(),
-            'normalize': MinMaxScaler()
+            'normalize': MinMaxScaler(),
+            'robust': RobustScaler()
         }
         scaler = scalers.get(scale_type)
         if not scaler:
-            raise ValueError("Invalid scale_type. Choose 'standard' or 'normalize'.")
+            raise ValueError("Invalid scale_type. Choose 'standard', 'normalize', or 'robust'.")
         return scaler.fit_transform(X_train), scaler.transform(X_test)
+
+    def calculate_statistics(self) -> pd.DataFrame:
+        """
+        Calculates basic statistics (mean, median, std) for each feature.
+        """
+        df = pd.DataFrame(self.data, columns=self.feature_names)
+        stats_df = pd.DataFrame({
+            'mean': df.mean(),
+            'median': df.median(),
+            'std': df.std()
+        })
+        return stats_df
+
+    def summarize_features(self, feature_names: Optional[List[str]] = None) -> pd.DataFrame:
+        """
+        Summarizes features with number of unique values, most common value, and its frequency.
+        If feature_names is provided, summarizes only selected features.
+        """
+        df = pd.DataFrame(self.data, columns=self.feature_names)
+
+        if feature_names is not None:
+            missing_features = [feature for feature in feature_names if feature not in df.columns]
+            if missing_features:
+                raise ValueError(f"Features not found: {missing_features}")
+            df = df[feature_names]
+
+        summary_rows = []
+        for feature in df.columns:
+            value_counts = df[feature].value_counts(dropna=False)
+            summary_rows.append({
+                'feature': feature,
+                'unique_values': df[feature].nunique(dropna=False),
+                'most_common_value': value_counts.index[0],
+                'most_common_frequency': int(value_counts.iloc[0])
+            })
+
+        return pd.DataFrame(summary_rows).set_index('feature')
 
     def visualize_feature_distribution(self, feature_index: int, scaled_data: Optional[np.ndarray] = None, title_suffix: str = ""):
         """

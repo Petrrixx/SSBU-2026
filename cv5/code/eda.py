@@ -1,7 +1,11 @@
-from data_handling_done import Dataset
+from data_handling import Dataset
 
 if __name__ == "__main__":
     dataset = Dataset()
+
+    # Task checks: print feature statistics and summary
+    print(dataset.calculate_statistics().head())
+    print(dataset.summarize_features().head())
 
     # plot class distribution
     dataset.plot_class_distribution()
