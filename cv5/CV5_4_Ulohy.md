@@ -64,11 +64,10 @@ updates in the summarize_features method:
 - Feature importance graf potvrdil, že iba časť atribútov má dominantný prínos pre klasifikáciu.
 
 ### Vplyv škálovania na dataset
-- Standardizácia (`StandardScaler`) centrovala premenné okolo nuly a zjednotila mierku pomocou štandardnej odchýlky.
+- Štandardizácia (`StandardScaler`) centrovala premenné okolo nuly a zjednotila mierku pomocou štandardnej odchýlky.
 - Normalizácia (`MinMaxScaler`) previedla hodnoty do intervalu `<0, 1>`, ale je citlivejšia na odľahlé hodnoty.
-- Robustné škálovanie (`RobustScaler`) bolo najstabilnejšie pri prítomnosti outlierov, lebo pracuje s mediánom a IQR.
+- Robustné škálovanie (`RobustScaler`) bolo najstabilnejšie pri odľahlých hodnotách v numerických premenných (hlavne pri `mean area`, `worst area`, `mean perimeter`, `worst perimeter`), lebo pracuje s mediánom a IQR.
 - Pri porovnaní boxplotov pred/po škálovaní bolo vidieť, že robustné škálovanie lepšie zachováva použiteľnú štruktúru dát pri extrémnych hodnotách.
 
 ### Záver
-- Pre ďalšie modelovanie je vhodné testovať viac škálovacích prístupov podľa citlivosti modelu na outliery.
 - Ak sú v dátach výrazné extrémy, robustné škálovanie je vo všeobecnosti bezpečnejšia voľba než min-max normalizácia.
