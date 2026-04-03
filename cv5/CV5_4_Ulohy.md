@@ -52,3 +52,23 @@ updates in the summarize_features method:
 **Úloha 5:** Dokumentácia
 1. Napíšte krátku správu, ktorá zhrnie výsledky vašich experimentov s analýzou dát. (Informácie vyčítané z grafov)
 2. Zahrňte pozorovania o vplyve rôznych metód škálovania na dataset.
+
+---
+
+## Vypracovanie Úlohy 5: Krátka Správa
+
+### Zhrnutie výsledkov EDA
+- Dataset obsahuje 2 triedy (benígne/malígne prípady) a viacero číselných atribútov popisujúcich vlastnosti buniek.
+- Z korelačnej matice bolo vidieť silné vzťahy medzi skupinami podobných atribútov (najmä veľkostné/obvodové/plošné charakteristiky).
+- Distribúcie atribútov (histogramy, boxploty) ukázali, že niektoré premenné obsahujú odľahlé hodnoty.
+- Feature importance graf potvrdil, že iba časť atribútov má dominantný prínos pre klasifikáciu.
+
+### Vplyv škálovania na dataset
+- Standardizácia (`StandardScaler`) centrovala premenné okolo nuly a zjednotila mierku pomocou štandardnej odchýlky.
+- Normalizácia (`MinMaxScaler`) previedla hodnoty do intervalu `<0, 1>`, ale je citlivejšia na odľahlé hodnoty.
+- Robustné škálovanie (`RobustScaler`) bolo najstabilnejšie pri prítomnosti outlierov, lebo pracuje s mediánom a IQR.
+- Pri porovnaní boxplotov pred/po škálovaní bolo vidieť, že robustné škálovanie lepšie zachováva použiteľnú štruktúru dát pri extrémnych hodnotách.
+
+### Záver
+- Pre ďalšie modelovanie je vhodné testovať viac škálovacích prístupov podľa citlivosti modelu na outliery.
+- Ak sú v dátach výrazné extrémy, robustné škálovanie je vo všeobecnosti bezpečnejšia voľba než min-max normalizácia.
