@@ -1,4 +1,5 @@
 import warnings
+from pathlib import Path
 
 # Suppress specific FutureWarnings from scikit-learn
 warnings.filterwarnings("ignore", category=FutureWarning)
@@ -57,7 +58,7 @@ def run_experiment(dataset, models, param_grids, logger):
     return experiment, results
 
 
-def plot_results(experiment, results, logger):
+def plot_results(experiment, results, logger, output_dir):
     """
     Plots the results of the experiment.
 
@@ -67,7 +68,7 @@ def plot_results(experiment, results, logger):
     - logger: Logger instance, for logging messages.
     """
     logger.info("Generating plots for the experiment results...")
-    plotter = ExperimentPlotter()
+    plotter = ExperimentPlotter(output_dir=output_dir)  # uloha3: output dir
     plotter.plot_metric_density(results)
     plotter.plot_evaluation_metric_over_replications(
         experiment.results.groupby('model')['accuracy'].apply(list).to_dict(),
@@ -89,11 +90,12 @@ def main():
     """
     logger = Logger(log_file="outputs/application.log")
     logger.info("Application started.")
+    plots_output_dir = str(Path(__file__).resolve().parent / "outputs" / "plots")  # uloha3: plot path
 
     dataset = DatasetRefactored()
     models, param_grids = initialize_models_and_params()
     experiment, results = run_experiment(dataset, models, param_grids, logger)
-    plot_results(experiment, results, logger)
+    plot_results(experiment, results, logger, plots_output_dir)
 
     logger.info("Application finished successfully.")
 

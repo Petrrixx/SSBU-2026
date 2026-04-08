@@ -6,6 +6,9 @@ from plotting.base_plotter import BasePlotter
 class ExperimentPlotter(BasePlotter):
     """A class for plotting the results of machine learning experiments."""
 
+    def __init__(self, output_dir="outputs/plots"):
+        super().__init__(output_dir)  # uloha3: output dir
+
     def plot_metric_density(self, results, metrics=('accuracy', 'f1_score', 'recall_score', 'roc_auc')):  # uloha2: recall density
         """
         Plot density plots for specified metrics.
@@ -26,7 +29,8 @@ class ExperimentPlotter(BasePlotter):
                 title=f'Density Plot of {metric.capitalize()}',
                 xlabel=metric.capitalize(),
                 ylabel='Density',
-                figsize=(10, 6)
+                figsize=(10, 6),
+                save_name=f"density_{metric}.png"  # uloha3: save plot
             )
 
     def plot_evaluation_metric_over_replications(self, all_metric_results, title, metric_name):
@@ -52,7 +56,8 @@ class ExperimentPlotter(BasePlotter):
             title=title,
             xlabel='Replication',
             ylabel=metric_name,
-            figsize=(10, 5)
+            figsize=(10, 5),
+            save_name=f"replications_{metric_name.lower()}.png"  # uloha3: save plot
         )
 
     def plot_confusion_matrices(self, confusion_matrices):
@@ -63,6 +68,7 @@ class ExperimentPlotter(BasePlotter):
         - confusion_matrices: Dict containing the average confusion matrix for each model.
         """
         for model_name, matrix in confusion_matrices.items():
+            model_slug = model_name.lower().replace(' ', '_')  # uloha3: file slug
             self._BasePlotter__generic_plot(
                 sns.heatmap,
                 matrix,
@@ -73,7 +79,8 @@ class ExperimentPlotter(BasePlotter):
                 title=f'Average Confusion Matrix: {model_name}',
                 xlabel='Predicted label',
                 ylabel='True label',
-                figsize=(6, 5)
+                figsize=(6, 5),
+                save_name=f"confusion_matrix_{model_slug}.png"  # uloha3: save plot
             )
 
     def print_best_parameters(self, results):

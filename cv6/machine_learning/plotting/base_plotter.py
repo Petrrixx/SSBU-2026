@@ -1,9 +1,14 @@
+import os
 from matplotlib import pyplot as plt
 from typing import Callable
 
 
 class BasePlotter:
     """Abstract base class for common plotting functionality."""
+
+    def __init__(self, output_dir="outputs/plots"):
+        self.output_dir = output_dir  # uloha3: output dir
+        os.makedirs(self.output_dir, exist_ok=True)  # uloha3: create dir
 
     def __generic_plot(self, plot_func: Callable, *args, **kwargs):
         """
@@ -15,10 +20,14 @@ class BasePlotter:
         - kwargs: Keyword arguments for the plotting function.
         """
         general_kwargs = {key: kwargs.pop(key, None) for key in ['title', 'xlabel', 'ylabel', 'xticks_rotation', 'yticks', 'yticklabels', 'xticks']}
+        save_name = kwargs.pop('save_name', None)  # uloha3: save name
         plt.figure(figsize=kwargs.pop('figsize', (10, 6)))
         plot_func(*args, **kwargs)
         self.__apply_plot_labels(general_kwargs)
         plt.tight_layout()
+        if save_name:
+            save_path = os.path.join(self.output_dir, save_name)  # uloha3: save path
+            plt.savefig(save_path, dpi=300)  # uloha3: save file
         plt.show()
 
     def __apply_plot_labels(self, general_kwargs):
