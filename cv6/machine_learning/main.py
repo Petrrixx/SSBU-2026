@@ -9,7 +9,7 @@ from experiment.experiment import Experiment
 from plotting.experiment_plotter import ExperimentPlotter
 from utils.logger import Logger
 
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import RandomForestClassifier  # uloha1: model
 
 
 def initialize_models_and_params():
@@ -22,11 +22,11 @@ def initialize_models_and_params():
     """
     models = {
         "Logistic Regression": LogisticRegression(solver='liblinear'),
-        "Random Forest": RandomForestClassifier(random_state=42)
+        "Random Forest": RandomForestClassifier(random_state=42)  # uloha1: model
     }
     param_grids = {
         "Logistic Regression": {"C": [0.1, 1, 10], "max_iter": [10000]},
-        "Random Forest": {
+        "Random Forest": {  # uloha1: grid
             "n_estimators": [100, 200, 300],
             "max_depth": [None, 5, 10],
             "min_samples_split": [2, 5],
@@ -72,6 +72,9 @@ def plot_results(experiment, results, logger):
     plotter.plot_evaluation_metric_over_replications(
         experiment.results.groupby('model')['accuracy'].apply(list).to_dict(),
         'Accuracy per Replication and Average Accuracy', 'Accuracy')
+    plotter.plot_evaluation_metric_over_replications(
+        experiment.results.groupby('model')['recall_score'].apply(list).to_dict(),
+        'Recall per Replication and Average Recall', 'Recall')  # uloha2: recall plot
     plotter.plot_confusion_matrices(experiment.mean_conf_matrices)
     plotter.print_best_parameters(results)
     logger.info("Plots generated successfully.")

@@ -6,7 +6,7 @@ from plotting.base_plotter import BasePlotter
 class ExperimentPlotter(BasePlotter):
     """A class for plotting the results of machine learning experiments."""
 
-    def plot_metric_density(self, results, metrics=('accuracy', 'f1_score', 'roc_auc')):
+    def plot_metric_density(self, results, metrics=('accuracy', 'f1_score', 'recall_score', 'roc_auc')):  # uloha2: recall density
         """
         Plot density plots for specified metrics.
 
@@ -42,9 +42,9 @@ class ExperimentPlotter(BasePlotter):
             colors = ['green', 'orange', 'blue']
             for i, (model_name, values) in enumerate(all_metric_results.items()):
                 plt.plot(values, label=f"{model_name} per replication", alpha=0.5, color=colors[i % len(colors)])
-                avg_accuracy = sum(values) / len(values)
-                plt.axhline(y=avg_accuracy, linestyle='--', color=colors[i % len(colors)], 
-                            label=f"{model_name} average accuracy: {avg_accuracy:.2f}")
+                avg_metric = sum(values) / len(values)
+                plt.axhline(y=avg_metric, linestyle='--', color=colors[i % len(colors)],
+                            label=f"{model_name} average {metric_name.lower()}: {avg_metric:.2f}")
             plt.legend()
 
         self._BasePlotter__generic_plot(

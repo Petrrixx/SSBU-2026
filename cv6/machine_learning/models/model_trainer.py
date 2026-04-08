@@ -1,4 +1,4 @@
-from sklearn.metrics import accuracy_score, f1_score, roc_auc_score
+from sklearn.metrics import accuracy_score, f1_score, recall_score, roc_auc_score
 from sklearn.utils.validation import check_X_y, check_array
 
 
@@ -49,5 +49,6 @@ class ModelTrainer:
             y_test)
         accuracy = accuracy_score(y_test, predictions)
         f1 = f1_score(y_test, predictions)
+        recall = recall_score(y_test, predictions)  # uloha2: recall
         roc_auc = roc_auc_score(y_test, prob_predictions)
-        return accuracy, f1, roc_auc, predictions
+        return accuracy, f1, recall, roc_auc, predictions
