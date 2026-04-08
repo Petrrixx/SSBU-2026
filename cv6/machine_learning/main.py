@@ -52,7 +52,8 @@ def run_experiment(dataset, models, param_grids, logger):
     - results: DataFrame, the results of the experiment.
     """
     logger.info("Starting the experiment...")
-    experiment = Experiment(models, param_grids, logger=logger)
+    n_replications = 12  # uloha4: replications
+    experiment = Experiment(models, param_grids, n_replications=n_replications, logger=logger)  # uloha4: set reps
     results = experiment.run(dataset.data, dataset.target)
     logger.info("Experiment completed successfully.")
     return experiment, results
