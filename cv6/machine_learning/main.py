@@ -1,7 +1,8 @@
 import warnings
 from pathlib import Path
 
-# Suppress specific FutureWarnings from scikit-learn
+# Poznamka: Copilot pomohol s brainstormingom, vysvetlenim kniznic/metod a planom postupu.
+# Copilot poradil skryt chyby z FutureWarnings.
 warnings.filterwarnings("ignore", category=FutureWarning)
 
 from sklearn.linear_model import LogisticRegression
