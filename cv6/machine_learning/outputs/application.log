@@ -1,0 +1,111 @@
+2026-04-08 16:58:13,882 - INFO - Application started.
+2026-04-08 16:58:13,886 - INFO - Starting the experiment...
+2026-04-08 16:58:13,890 - INFO - Starting replication 1/12
+2026-04-08 16:58:20,394 - INFO - Starting replication 2/12
+2026-04-08 16:58:25,424 - INFO - Starting replication 3/12
+2026-04-08 16:58:30,762 - INFO - Starting replication 4/12
+2026-04-08 16:58:35,908 - INFO - Starting replication 5/12
+2026-04-08 16:58:41,134 - INFO - Starting replication 6/12
+2026-04-08 16:58:45,771 - INFO - Starting replication 7/12
+2026-04-08 16:58:50,818 - INFO - Starting replication 8/12
+2026-04-08 16:58:55,608 - INFO - Starting replication 9/12
+2026-04-08 16:59:00,274 - INFO - Starting replication 10/12
+2026-04-08 16:59:05,274 - INFO - Starting replication 11/12
+2026-04-08 16:59:10,326 - INFO - Starting replication 12/12
+2026-04-08 16:59:15,262 - INFO - Experiment completed successfully.
+2026-04-08 16:59:15,262 - INFO - Generating plots for the experiment results...
+2026-04-08 16:59:23,680 - INFO - Plots generated successfully.
+2026-04-08 16:59:23,681 - INFO - Application finished successfully.
+2026-04-09 02:24:31,207 - INFO - Application started.
+2026-04-09 02:24:31,216 - INFO - Starting the experiment...
+2026-04-09 02:24:31,222 - INFO - Starting replication 1/12
+2026-04-09 02:24:37,483 - INFO - Starting replication 2/12
+2026-04-09 02:24:42,321 - INFO - Starting replication 3/12
+2026-04-09 02:24:47,482 - INFO - Starting replication 4/12
+2026-04-09 02:24:52,465 - INFO - Starting replication 5/12
+2026-04-09 02:24:57,637 - INFO - Starting replication 6/12
+2026-04-09 02:25:02,788 - INFO - Starting replication 7/12
+2026-04-09 02:25:08,116 - INFO - Starting replication 8/12
+2026-04-09 02:25:13,574 - INFO - Starting replication 9/12
+2026-04-09 02:25:19,254 - INFO - Starting replication 10/12
+2026-04-09 02:25:24,270 - INFO - Starting replication 11/12
+2026-04-09 02:25:29,310 - INFO - Starting replication 12/12
+2026-04-09 02:25:34,351 - INFO - Experiment completed successfully.
+2026-04-09 02:25:34,351 - INFO - Generating plots for the experiment results...
+2026-04-09 02:25:55,237 - INFO - Plots generated successfully.
+2026-04-09 02:25:55,237 - INFO - Application finished successfully.
+2026-04-09 02:44:55,922 - INFO - Application started.
+2026-04-09 02:44:55,927 - INFO - Starting the experiment...
+2026-04-09 02:44:55,930 - INFO - Starting replication 1/12
+2026-04-09 02:45:03,116 - INFO - Starting replication 2/12
+2026-04-09 02:45:08,792 - INFO - Starting replication 3/12
+2026-04-09 02:45:13,483 - INFO - Starting replication 4/12
+2026-04-09 02:45:18,319 - INFO - Starting replication 5/12
+2026-04-09 02:45:23,105 - INFO - Starting replication 6/12
+2026-04-09 02:45:28,047 - INFO - Starting replication 7/12
+2026-04-09 02:45:33,700 - INFO - Starting replication 8/12
+2026-04-09 02:45:39,196 - INFO - Starting replication 9/12
+2026-04-09 02:45:44,395 - INFO - Starting replication 10/12
+2026-04-09 02:45:49,584 - INFO - Starting replication 11/12
+2026-04-09 02:45:54,645 - INFO - Starting replication 12/12
+2026-04-09 02:46:00,004 - INFO - Experiment completed successfully.
+2026-04-09 02:46:00,004 - INFO - Generating plots for the experiment results...
+2026-04-09 02:46:09,987 - INFO - Plots generated successfully.
+2026-04-09 02:46:09,987 - INFO - Application finished successfully.
+2026-04-09 02:46:11,608 - INFO - Application started.
+2026-04-09 02:46:11,613 - INFO - Starting the experiment...
+2026-04-09 02:46:11,618 - INFO - Starting replication 1/12
+2026-04-09 02:46:18,625 - INFO - Starting replication 2/12
+2026-04-09 02:46:24,512 - INFO - Starting replication 3/12
+2026-04-09 02:46:29,983 - INFO - Starting replication 4/12
+2026-04-09 02:46:35,267 - INFO - Starting replication 5/12
+2026-04-09 02:46:40,795 - INFO - Starting replication 6/12
+2026-04-09 02:46:46,006 - INFO - Starting replication 7/12
+2026-04-09 02:46:51,432 - INFO - Starting replication 8/12
+2026-04-09 02:46:56,681 - INFO - Starting replication 9/12
+2026-04-09 02:47:02,194 - INFO - Starting replication 10/12
+2026-04-09 02:47:07,905 - INFO - Starting replication 11/12
+2026-04-09 02:47:12,939 - INFO - Starting replication 12/12
+2026-04-09 02:47:17,945 - INFO - Experiment completed successfully.
+2026-04-09 02:47:17,945 - INFO - Generating plots for the experiment results...
+2026-04-09 02:47:25,714 - INFO - Plots generated successfully.
+2026-04-09 02:47:25,715 - INFO - Application finished successfully.
+2026-04-09 02:48:00,839 - INFO - Application started.
+2026-04-09 02:48:00,844 - INFO - Starting the experiment...
+2026-04-09 02:48:00,847 - INFO - Starting replication 1/12
+2026-04-09 02:48:33,903 - INFO - Application started.
+2026-04-09 02:48:33,907 - INFO - Starting the experiment...
+2026-04-09 02:48:33,911 - INFO - Starting replication 1/12
+2026-04-09 02:48:40,453 - INFO - Starting replication 2/12
+2026-04-09 02:48:45,112 - INFO - Starting replication 3/12
+2026-04-09 02:48:50,033 - INFO - Starting replication 4/12
+2026-04-09 02:48:55,824 - INFO - Starting replication 5/12
+2026-04-09 02:49:01,011 - INFO - Starting replication 6/12
+2026-04-09 02:49:06,321 - INFO - Starting replication 7/12
+2026-04-09 02:49:12,002 - INFO - Starting replication 8/12
+2026-04-09 02:49:16,996 - INFO - Starting replication 9/12
+2026-04-09 02:49:21,786 - INFO - Starting replication 10/12
+2026-04-09 02:49:27,165 - INFO - Starting replication 11/12
+2026-04-09 02:49:32,647 - INFO - Starting replication 12/12
+2026-04-09 02:49:37,943 - INFO - Experiment completed successfully.
+2026-04-09 02:49:37,943 - INFO - Generating plots for the experiment results...
+2026-04-09 02:49:49,288 - INFO - Plots generated successfully.
+2026-04-09 02:49:49,290 - INFO - Application finished successfully.
+2026-04-09 02:49:50,963 - INFO - Application started.
+2026-04-09 02:49:50,967 - INFO - Starting the experiment...
+2026-04-09 02:49:50,971 - INFO - Starting replication 1/12
+2026-04-09 02:49:57,475 - INFO - Starting replication 2/12
+2026-04-09 02:50:02,505 - INFO - Starting replication 3/12
+2026-04-09 02:50:07,843 - INFO - Starting replication 4/12
+2026-04-09 02:50:12,989 - INFO - Starting replication 5/12
+2026-04-09 02:50:18,215 - INFO - Starting replication 6/12
+2026-04-09 02:50:22,852 - INFO - Starting replication 7/12
+2026-04-09 02:50:27,899 - INFO - Starting replication 8/12
+2026-04-09 02:50:32,689 - INFO - Starting replication 9/12
+2026-04-09 02:50:37,355 - INFO - Starting replication 10/12
+2026-04-09 02:50:42,355 - INFO - Starting replication 11/12
+2026-04-09 02:50:47,407 - INFO - Starting replication 12/12
+2026-04-09 02:50:52,343 - INFO - Experiment completed successfully.
+2026-04-09 02:50:52,343 - INFO - Generating plots for the experiment results...
+2026-04-09 02:51:00,761 - INFO - Plots generated successfully.
+2026-04-09 02:51:00,762 - INFO - Application finished successfully.
