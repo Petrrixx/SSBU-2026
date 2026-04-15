@@ -41,6 +41,25 @@ def server(input, output, session):
         txt_status.set(result)
 
     @reactive.Effect
+    @reactive.event(input.calculate_avg)
+    def calculate_avg_event():
+        measurement_type = input.measurement_type() or data.measurements[0]
+        patient_data = patient_data_dict.get()
+
+        measurement_values = []
+        for patient_df in patient_data.values():
+            measurement_values.append(patient_df[measurement_type])
+
+        all_values = pd.concat(measurement_values).dropna()
+        avg_value = all_values.mean()
+
+        if pd.isna(avg_value):
+            txt_status.set(f"No data available to compute average for {measurement_type}.")
+            return
+
+        txt_status.set(f"Average {measurement_type} across all patients: {avg_value:.2f}")
+
+    @reactive.Effect
     @reactive.event(input.view_type)
     def view_type_change_event():
         view_type = input.view_type()
